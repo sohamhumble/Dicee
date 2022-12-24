@@ -28,31 +28,52 @@ class _DicePageState extends State<DicePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Row(
-          children: [
-            Expanded(
-              child: TextButton(
-                onPressed: () {
-                  setState(() {
-                    leftDiceNumber = Random().nextInt(6) + 1;
-                  });
-                },
-                child: Image.asset('images/dice$leftDiceNumber.png'),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: TextButton(
+                  onPressed: () {
+                    setState(() {
+                      leftDiceNumber = Random().nextInt(5) + 1;
+                    });
+                  },
+                  child: Image.asset('images/dice$leftDiceNumber.png'),
+                ),
               ),
-            ),
-            Expanded(
-              child: TextButton(
-                onPressed: () {
-                  setState(() {
-                    rightDiceNumber = Random().nextInt(5) + 1;
-                  });
-                },
-                child: Image.asset('images/dice$rightDiceNumber.png'),
+              Expanded(
+                child: TextButton(
+                  onPressed: () {
+                    setState(() {
+                      rightDiceNumber = Random().nextInt(5) + 1;
+                    });
+                  },
+                  child: Image.asset('images/dice$rightDiceNumber.png'),
+                ),
               ),
+            ],
+          ),
+          ElevatedButton(
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.red[800],
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+              textStyle: const TextStyle(fontSize: 20),
             ),
-          ],
-        ),
+            onPressed: () {
+              setState(
+                () {
+                  rightDiceNumber = Random().nextInt(5) + 1;
+                  leftDiceNumber = Random().nextInt(5) + 1;
+                },
+              );
+            },
+            child: Text("Roll"),
+          ),
+        ],
       ),
     );
   }

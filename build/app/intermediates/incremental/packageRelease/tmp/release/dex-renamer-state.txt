@@ -1,4 +1,4 @@
-#Thu Dec 22 17:04:08 IST 2022
+#Sat Dec 24 16:29:02 IST 2022
 base.0=C\:\\Users\\asoha\\StudioProjects\\dicee-flutter\\build\\app\\intermediates\\transforms\\r8\\release\\0\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
